@@ -11,6 +11,12 @@ public class WebElementCommands extends Base{
 		textbox.sendKeys("Greeshma");
 		WebElement showmessagebutton = driver.findElement(By.id("button-one"));
 		showmessagebutton.click();	
+		WebElement text = driver.findElement(By.id("button-one"));
+		System.out.println(text.getText());
+		System.out.println(text.getTagName());
+		textbox.clear();
+		System.out.println(showmessagebutton.getCssValue("background-color"));
+		
 	}
 
 	public static void main(String[] args) {
