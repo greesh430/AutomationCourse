@@ -9,22 +9,33 @@ public class HandlingAlert extends Base{
 		driver.navigate().to("https://demoqa.com/alerts");
 		WebElement simplealert = driver.findElement(By.id("alertButton"));
 		simplealert.click();
-		Alert simpalert = driver.switchTo().alert();
-		simpalert.accept();
+		Alert al = driver.switchTo().alert();
+		al.accept();
 	}
 	public void verifyConfirmAlert() {
 		driver.navigate().to("https://demoqa.com/alerts");
 		WebElement confirmalert = driver.findElement(By.id("confirmButton"));
 		confirmalert.click();
-		Alert confrmalert = driver.switchTo().alert();
-		confrmalert.dismiss();		
+		Alert al = driver.switchTo().alert();
+		al.dismiss();		
+	}
+	
+	public void verifyPromptAlert() {
+		driver.navigate().to("https://demoqa.com/alerts");
+		WebElement promptalert = driver.findElement(By.id("promtButton"));
+		promptalert.click();
+		Alert al = driver.switchTo().alert();
+		al.sendKeys("Greeshma");
+		al.accept();
+
 	}
 
 	public static void main(String[] args) {
 		HandlingAlert handlingalert = new HandlingAlert();
 		handlingalert.initializeBrowser();
-		handlingalert.verifySimpleAlert();
-		handlingalert.verifyConfirmAlert();
+		//handlingalert.verifySimpleAlert();
+		//handlingalert.verifyConfirmAlert();
+		handlingalert.verifyPromptAlert();
 
 	}
 
